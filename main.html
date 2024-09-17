@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Link</title>
+    <style>
+        /* Ensure the HTML and body elements cover the full viewport */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Optional: Prevent scrollbars */
+        }
+        /* Style the image to cover the entire page */
+        .full-page-image {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+        }
+        /* Center the link block */
+        a {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <a href="login.html">
+        <img src="main.jpg" alt="Clickable Image" class="full-page-image">
+    </a>
+</body>
+</html>

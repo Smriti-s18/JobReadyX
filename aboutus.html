@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            background-color: white;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .letter-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .letter {
+            font-family: 'Arial', sans-serif;
+            font-size: 160px;
+            font-weight: bold;
+            position: relative;
+            width: 240px;
+            height: 160px;
+            line-height: 160px;
+            background: url('office.jpg') no-repeat center center;
+            background-size: cover;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0;
+        }
+
+        .block {
+            position: relative;
+            width: 240px;
+            height: 400px;
+            background: url('office.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block-text {
+            font-size: 24px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            position: absolute;
+        }
+
+        .scroll-section {
+            display: grid;
+            grid-template-columns: repeat(5, 200px); /* 5 columns for 5 triangles */
+            grid-gap: 60px; /* Space between grid items */
+            justify-content: center;
+            margin: 150px 0 50px; /* Adds space above the section to push it down and margin at the bottom */
+        }
+
+        .triangle-image {
+            width: 200px; /* Increased size */
+            height: 200px; /* Increased size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('beach.jpg') no-repeat center center;
+            background-size: cover;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .triangle-image::before {
+            content: attr(data-label);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .triangle-image.upside-down {
+            transform: rotate(180deg);
+        }
+
+        .triangle-image.upside-down::before {
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+
+        .triangle-image.right-side-up {
+            transform: rotate(0deg);
+        }
+
+        .scroll-section a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Additional space at the end */
+        .end-spacing {
+            height: 50px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="letter-block">
+            <div class="letter" style="background-position: center top;">A</div>
+            <div class="block" style="background-position: center bottom;">
+                <div class="block-text">At JobReadyX, we help students transition from academics to professional success. Our platform offers tools and resources to build skills, create standout resumes, and ace interviews. We're here to support your career journey.</div>
+            </div>
+        </div>
+        <div class="letter-block">
+            <div class="letter" style="background-position: center top;">B</div>
+            <div class="block" style="background-position: center bottom;">
+                <div class="block-text">Mission Statement: Transforming student potential into professional success</div>
+            </div>
+        </div>
+        <div class="letter-block">
+            <div class="letter" style="background-position: center top;">O</div>
+            <div class="block" style="background-position: center bottom;">
+                <div class="block-text">The future belongs to those who prepare for it today." – Dr. A.P.J. Abdul Kalam</div>
+            </div>
+        </div>
+        <div class="letter-block">
+            <div class="letter" style="background-position: center top;">U</div>
+            <div class="block" style="background-position: center bottom;">
+                <div class="block-text">Features include up-to-date news headlines, an ATS checker, job openings, company-wise training info, and mock tests with aptitude materials</div>
+            </div>
+        </div>
+        <div class="letter-block">
+            <div class="letter" style="background-position: center top;">T</div>
+            <div class="block" style="background-position: center bottom;">
+                <div class="block-text">Have questions or need support? Reach out to us at abc@gmail.com We're here to help!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-section">
+        <!-- <a href="login.html" class="triangle-image upside-down" data-label="Login"></a> -->
+        <a href="news.html" class="triangle-image right-side-up" data-label="News"></a>
+        <a href="ats.html" class="triangle-image upside-down" data-label="ATS Checker"></a>
+        <a href="openings.html" class="triangle-image right-side-up" data-label="Job Openings"></a>
+        <a href="mocktest.html" class="triangle-image upside-down" data-label="Aptitude Tests"></a>
+    </div>
+
+    <div class="end-spacing"></div>
+
+</body>
+</html>
+
+

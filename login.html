@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page - JobReadyX</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            display: flex;
+            width: 800px;
+            height: 600px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-section {
+            background-color: #D1E8E4;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-section img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .right-section {
+            flex: 1;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .create-box {
+            width: 70%;
+        }
+
+        .create-box h2 {
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .create-box form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .create-box label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .create-box input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .captcha {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .captcha img {
+            margin-right: 10px;
+            margin-top: -13px;
+        }
+
+        .create-btn {
+            background-color: #f1c40f;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-to-login {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-to-login a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            .left-section {
+                height: 200px;
+            }
+
+            .right-section {
+                padding: 20px;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            display: flex;
+            width: 800px;
+            height: 500px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-section {
+            background-color: #D1E8E4;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-section img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .right-section {
+            flex: 1;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            width: 70%;
+        }
+
+        .login-box h2 {
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .login-box form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-box label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .login-box input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .forgot-password a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .sign-in-btn {
+            background-color: #f1c40f;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .new-account {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .new-account a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .error-message {
+            color: red;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            .left-section {
+                height: 200px;
+            }
+
+            .right-section {
+                padding: 20px;
+            }
+        }
+    </style>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            var form = event.target;
+            var formData = new FormData(form);
+    
+            fetch('login.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('response').innerHTML = data;
+                if (data.includes('Login successful')) {
+                    setTimeout(function() {
+                        window.location.href = 'about.html';
+                    }, 2000);
+                }
+            })
+            .catch(error => {
+                document.getElementById('response').innerHTML = "An error occurred: " + error;
+            });
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="login.jpg" alt="Login Image">
+        </div>
+        <div class="right-section">
+            <div class="login-box">
+                <h2>Welcome to JobReadyX</h2>
+                <form onsubmit="handleFormSubmit(event)">
+                    <label for="username">Username or Email</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <div class="forgot-password">
+                        <a href="forgot.html">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="sign-in-btn">Sign in</button>
+                </form>
+                <p id="response" class="error-message"></p>
+                <p class="new-account">New to JobReadyX? <a href="signup.html">Create Account</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
