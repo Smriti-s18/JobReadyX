@@ -5,3 +5,7 @@
 [submodule "ats/vendor/phpoffice/phpword"]
     path = ats/vendor/phpoffice/phpword
     url = https://github.com/PHPOffice/PHPWord.git
+
+[submodule "ats/vendor/smalot/pdfparser"]
+    path = ats/vendor/smalot/pdfparser
+    url = https://github.com/smalot/pdfparser.git
