@@ -9,3 +9,7 @@
 [submodule "ats/vendor/smalot/pdfparser"]
     path = ats/vendor/smalot/pdfparser
     url = https://github.com/smalot/pdfparser.git
+
+[submodule "ats/vendor/symfony/polyfill-mbstring"]
+    path = ats/vendor/symfony/polyfill-mbstring
+    url = https://github.com/symfony/polyfill-mbstring.git
