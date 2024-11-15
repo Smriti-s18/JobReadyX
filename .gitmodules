@@ -13,19 +13,3 @@
 [submodule "ats/vendor/symfony/polyfill-mbstring"]
     path = ats/vendor/symfony/polyfill-mbstring
     url = https://github.com/symfony/polyfill-mbstring.git
-
-[submodule "vendor/phpoffice/math"]
-    path = vendor/phpoffice/math
-    url = https://github.com/PHPOffice/PhpSpreadsheet.git
-    
-[submodule "vendor/phpoffice/phpword"]
-    path = vendor/phpoffice/phpword
-    url = https://github.com/PHPOffice/PHPWord.git
-
-[submodule "vendor/smalot/pdfparser"]
-    path = vendor/smalot/pdfparser
-    url = https://github.com/smalot/pdfparser.git
-
-[submodule "vendor/symfony/polyfill-mbstring"]
-    path = vendor/symfony/polyfill-mbstring
-    url = https://github.com/symfony/polyfill-mbstring.git
