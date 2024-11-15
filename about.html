@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>About us</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- font css -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            background-color: rgb(247, 249, 231);
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            text-align: center;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .letter-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .letter {
+            font-family: 'Arial', sans-serif;
+            font-size: 160px;
+            font-weight: bold;
+            position: relative;
+            width: 240px;
+            height: 160px;
+            line-height: 160px;
+            background: url('office.jpg') no-repeat center center;
+            background-size: cover;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0;
+        }
+
+        .block {
+            position: relative;
+            width: 240px;
+            height: 400px;
+            background: url('office.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block-text {
+            font-size: 24px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            position: absolute;
+        }
+
+        .scroll-section {
+            display: grid;
+            grid-template-columns: repeat(5, 200px); /* 5 columns for 5 triangles */
+            grid-gap: 60px; /* Space between grid items */
+            justify-content: center;
+            margin: 150px 0 50px; /* Adds space above the section to push it down and margin at the bottom */
+        }
+
+        .triangle-image {
+            width: 200px; /* Increased size */
+            height: 200px; /* Increased size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('beach.jpg') no-repeat center center;
+            background-size: cover;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .triangle-image::before {
+            content: attr(data-label);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .triangle-image.upside-down {
+            transform: rotate(180deg);
+        }
+
+        .triangle-image.upside-down::before {
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+
+        .triangle-image.right-side-up {
+            transform: rotate(0deg);
+        }
+
+        .scroll-section a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Additional space at the end */
+        .end-spacing {
+            height: 50px; /* Adjust as needed */
+        }
+        .block-text {
+            font-size: 18px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            overflow: hidden; /* Prevents text overflow */
+            word-wrap: break-word; /* Ensures long words break to fit within the container */
+        }
+        .coffee_img img {
+            width: 240px;  /* Set the desired width */
+            height: 240px; /* Set the desired height */
+            object-fit: cover; /* Ensures that the images cover the entire area without distortion */
+            align-items: center;
+        }
+        .coffee_section_2 {
+            margin-top: 30px; /* Adjust spacing as needed */
+        }
+
+        .coffee_img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px; /* Space between image and text */
+        }
+
+        .types_text {
+            text-align: center;
+            margin: 10px 0; /* Space between text and other elements */
+        }
+
+        .read_bt {
+            text-align: center;
+        }
+
+        .footer_section {
+            width: 100%; /* Make footer full width */
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0; /* Adjusted padding for better spacing */
+            text-align: center;
+            position: relative;
+            left: 0;
+            bottom: 0;
+        }
+
+        .container1 {
+            width: 90%; /* Ensures some space on the sides */
+            margin: 0 auto; /* Centers the container */
+        }
+
+        .address_text, .footer_text {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .location_text ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .location_text ul li {
+            margin-bottom: 8px;
+        }
+
+        .location_text a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .location_text a:hover {
+            text-decoration: underline;
+        }
+
+        .footer_social_icon ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer_social_icon ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .footer_social_icon a {
+            color: #ccc;
+            font-size: 24px; /* Increased size for better visibility */
+        }
+
+        .footer_social_icon a:hover {
+            color: #fff;
+        }
+
+        .copyright_section {
+            background-color: #333;
+            color: #ccc;
+            padding: 10px 0; /* Adjusted padding for consistency */
+            font-size: 0.8rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <header class="header_section header_bg">
+      <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="index.html"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+
+                      <li class="nav-item active"><a class="nav-link" href="about.html">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                      <li class="nav-item "><a class="nav-link" href="mock.php">Mock Tests</a></li>
+                      <li class="nav-item"><a class="nav-link" href="ats.php">ATS Checker</a></li>
+                      <li class="nav-item"><a class="nav-link" href="company.php">Company Listing</a></li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                      <div class="login_bt">
+                          <ul style="color:#222">
+                              <li><a href="login.html" style="color:#222"><span class="user_icon"><i class="fa fa-user" aria-hidden="true" style="color:#222"></i></span>Login</a></li>
+                              <!-- <li><a href="#"><i class="fa fa-search" aria-hidden="true" style="color:#222"></i></a></li> -->
+                          </ul>
+                      </div>
+                  </form>
+              </div>
+          </nav>
+      </div>
+  </header>
+    <div class="container">
+        <div class="letter-block">
+            <div class="letter" style="background-position: center top;">A</div>
+            <div class="block" style="background-position: center bottom;">
+                <div class="block-text">At JobReadyX, we help students transition from academics to professional success. Our platform offers tools and resources to build skills, create standout resumes, and ace interviews. We're here to support your career journey.</div>
+            </div>
+        </div>
+        <div class="letter-block">
+            <div class="letter" style="background-position: center top;">B</div>
+            <div class="block" style="background-position: center bottom;">
+                <div class="block-text">Mission Statement: Transforming student potential into professional success</div>
+            </div>
+        </div>
+        <div class="letter-block">
+            <div class="letter" style="background-position: center top;">O</div>
+            <div class="block" style="background-position: center bottom;">
+                <div class="block-text">The future belongs to those who prepare for it today." – Dr. A.P.J. Abdul Kalam</div>
+            </div>
+        </div>
+        <div class="letter-block">
+            <div class="letter" style="background-position: center top;">U</div>
+            <div class="block" style="background-position: center bottom;">
+                <div class="block-text">Features include up-to-date news headlines, an ATS checker, job openings, company-wise training info, and mock tests with aptitude materials</div>
+            </div>
+        </div>
+        <div class="letter-block">
+            <div class="letter" style="background-position: center top;">T</div>
+            <div class="block" style="background-position: center bottom;">
+                <div class="block-text">Have questions or need support? Reach out to us at abc@gmail.com We're here to help!</div>
+            </div>
+        </div>
+    </div>
+<div class="coffee_section layout_padding">
+   <div class="container">
+      <div class="row">
+         <h1 class="coffee_taital">OUR WEBSITE FEATURES</h1>
+         <div class="bulit_icon"><img src="images/bulit-icon.png"></div>
+      </div>
+   </div>
+   <div class="coffee_section_2">
+      <div id="main_slider" class="carousel slide" data-ride="carousel">
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-lg-3 col-md-6">
+                        <div class="coffee_img"><img src="images/img-1.png" width="140" height="140"></div>
+                        <h3 class="types_text">News</h3>
+                        <p class="looking_text">Daily updates to help students stay informed and excel in group discussions.</p>
+                        <div class="read_bt"><a href="news.html">Read More</a></div>
+                     </div>
+                     <div class="col-lg-3 col-md-6">
+                        <div class="coffee_img"><img src="images/img-2.png" width="140" height="140"></div>
+                        <h3 class="types_text">Aptitude Tests</h3>
+                        <p class="looking_text">Practice verbal, logical, and quantitative sections to enhance your aptitude skills.</p>
+                        <div class="read_bt"><a href="mock.php">Read More</a></div>
+                     </div>
+                     <div class="col-lg-3 col-md-6">
+                        <div class="coffee_img"><img src="images/img-3.png" width="140" height="140"></div>
+                        <h3 class="types_text">ATS Checker</h3>
+                        <p class="looking_text">Check your resume against ATS standards and get helpful suggestions.</p>
+                        <div class="read_bt"><a href="ats.php">Read More</a></div>
+                     </div>
+                     <div class="col-lg-3 col-md-6">
+                        <div class="coffee_img"><img src="images/img-4.png" width="140" height="140"></div>
+                        <h3 class="types_text">Company Listings</h3>
+                        <p class="looking_text">Explore job opportunities from <br>various companies tailored to different fields.</p>
+                        <div class="read_bt"><a href="Company.php">Read More</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+<br>
+            <footer class="footer_section">
+               <!-- <div class="container"> -->
+                   <div class="row">
+                       <div class="col-md-4">
+                           <div class="address_text">Address</div>
+                           <div class="location_text">
+                               <ul>
+                                   <li>M.O.P Vaishnav College for Women</li>
+                                   <li>Nungambakkam, Chennai-600034</li>
+                                   <li>Phone: 981095817  |  9382633966</></li>
+                                   <li><a href="#">Email: 2313711058046@mopvaishnav.ac.in  |  2313711058004@mopvaishnav.ac.in</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                       <div class="col-md-4">
+                           <div class="footer_text">
+                               <p>&copy; 2024 JobReadyX. All Rights Reserved.</p>
+                               <div class="footer_social_icon">
+                                   <ul>
+                                       <li><a href="https://www.facebook.com/MOPVaishnavCollegeforWomen/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                       <li><a href="https://in.linkedin.com/school/m-o-p-vaishnav-college-for-women/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                       <li><a href="https://www.instagram.com/mopvcfw/?igshid=r8dcc24adg9u"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                   <!-- </div> -->
+               </div>
+           </footer>
+           <div class="copyright_section">
+               <p class="copyright_text">&copy; 2024 JobReadyX.All Rights Reserved.</p>
+           </div>
+
+</body>
+</html>

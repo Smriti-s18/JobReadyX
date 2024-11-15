@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .category {
+            margin-bottom: 20px;
+        }
+        .links {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .links a {
+            display: block;
+            margin: 5px 0;
+            text-decoration: none;
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Job Listings</h1>
+
+    <!-- Commerce Dropdown -->
+    <div class="category">
+        <label for="commerce">Commerce:</label>
+        <select id="commerce" onchange="showLinks('commerceLinks')">
+            <option value="">Select a program</option>
+            <option value="bcom_mm">B.Com Marketing Management</option>
+            <option value="bcom_af">B.Com Accounting & Finance</option>
+            <option value="bcom_ft">B.Com Finance & Taxation</option>
+            <option value="bba">BBA</option>
+            <option value="mba">MBA</option>
+        </select>
+    </div>
+
+    <!-- Science Dropdown -->
+    <div class="category">
+        <label for="science">Sciences:</label>
+        <select id="science" onchange="showLinks('scienceLinks')">
+            <option value="">Select a program</option>
+            <option value="bsc_cs">B.Sc Computer Science</option>
+            <option value="bsc_ds">B.Sc Data Science</option>
+            <option value="bca">BCA</option>
+            <option value="msc_it">M.Sc IT</option>
+            <option value="fsm">Food Science & Management</option>
+            <option value="em">Environmental Management</option>
+        </select>
+    </div>
+
+    <!-- Humanities Dropdown -->
+    <div class="category">
+        <label for="humanities">Humanities:</label>
+        <select id="humanities" onchange="showLinks('humanitiesLinks')">
+            <option value="">Select a program</option>
+            <option value="sociology">Sociology</option>
+            <option value="psychology">Psychology</option>
+            <option value="journalism">Journalism</option>
+        </select>
+    </div>
+
+    <!-- Links Sections -->
+    <div id="commerceLinks" class="links" style="display:none;">
+        <h3>Commerce Job Listings</h3>
+        <a href="https://www.pwc.com">PwC</a>
+        <a href="https://www.ey.com">Ernst & Young</a>
+        <a href="https://www.deloitte.com">Deloitte</a>
+        <a href="https://www.kpmg.com">KPMG</a>
+    </div>
+
+    <div id="scienceLinks" class="links" style="display:none;">
+        <h3>Sciences Job Listings</h3>
+        <a href="https://www.google.com/careers">Google</a>
+        <a href="https://www.microsoft.com/en-us/careers">Microsoft</a>
+        <a href="https://www.ibm.com/careers">IBM</a>
+        <a href="https://www.tcs.com/careers">TCS</a>
+    </div>
+
+    <div id="humanitiesLinks" class="links" style="display:none;">
+        <h3>Humanities Job Listings</h3>
+        <a href="https://www.bbc.co.uk/careers">BBC</a>
+        <a href="https://www.thehindu.com/careers/">The Hindu</a>
+        <a href="https://www.ndtv.com/careers">NDTV</a>
+        <a href="https://www.amnesty.org/en/careers/">Amnesty International</a>
+    </div>
+
+    <script>
+        function showLinks(categoryId) {
+            // Hide all link sections
+            document.getElementById('commerceLinks').style.display = 'none';
+            document.getElementById('scienceLinks').style.display = 'none';
+            document.getElementById('humanitiesLinks').style.display = 'none';
+            
+            // Show the selected link section
+            if (categoryId) {
+                document.getElementById(categoryId).style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

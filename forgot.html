@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - JobReadyX</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            display: flex;
+            width: 800px;
+            height: 500px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-section {
+            background-color: #D1E8E4;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-section img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .right-section {
+            flex: 1;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .forgot-box {
+            width: 70%;
+        }
+
+        .forgot-box h2 {
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .forgot-box form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .forgot-box label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .forgot-box input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .forgot-box .instructions {
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #666;
+        }
+
+        .reset-btn {
+            background-color: #f1c40f;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-to-login {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-to-login a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .error-message {
+            color: red;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            .left-section {
+                height: 200px;
+            }
+
+            .right-section {
+                padding: 20px;
+            }
+        }
+    </style>
+    <script>
+        async function validateForm(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            var username = document.getElementById('username').value;
+            var newPassword = document.getElementById('new-password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var errorMessage = document.getElementById('error-message');
+            errorMessage.innerHTML = '';
+
+            if (newPassword === confirmPassword) {
+                // You can also add a check here for the old password if it's part of your form
+                // For now, it's assumed that the old password check is handled server-side
+
+                // Simulate form submission or handle it via AJAX
+                try {
+                    const response = await fetch('reset_password.php', {
+                        method: 'POST',
+                        body: new FormData(event.target)
+                    });
+
+                    const result = await response.text();
+                    if (response.ok) {
+                        if (result.includes('Password reset successful')) {
+                            window.location.href = 'login.html'; // Redirect to login page
+                        } else {
+                            errorMessage.innerHTML = result; // Display any error messages from the server
+                        }
+                    } else {
+                        errorMessage.innerHTML = "An error occurred: " + result;
+                    }
+                } catch (error) {
+                    errorMessage.innerHTML = "An error occurred: " + error.message;
+                }
+            } else {
+                errorMessage.innerHTML = 'New password and confirm password do not match.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="login.jpg" alt="Forgot Password Image">
+        </div>
+        <div class="right-section">
+            <div class="forgot-box">
+                <h2>Reset Your Password</h2>
+                <p class="instructions">Enter your username and new password below. Confirm your new password to complete the reset.</p>
+                <form onsubmit="validateForm(event)">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="Enter your new password" required>
+                    
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your new password" required>
+                    
+                    <button type="submit" class="reset-btn">Reset Password</button>
+                </form>
+                <p id="error-message" class="error-message"></p>
+                <p class="back-to-login">Remembered your password? <a href="login.html">Back to Login</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

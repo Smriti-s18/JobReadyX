@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepare for Group Discussions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            background-color: #f4f4f9;
+            color: #333;
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .links-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .news-item {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .news-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .news-item h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .news-item p a {
+            color: #f8c300;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .news-item p a:hover {
+            text-decoration: underline;
+            color: #ffb700;
+        }
+
+        .cat {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://example.com/cat.png'); /* Replace with a small cat image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: none;
+        }
+
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url('https://example.com/ball.png'); /* Replace with a small ball image */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .footer_section {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .address_text {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .location_text ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .location_text ul li {
+            margin-bottom: 10px;
+        }
+
+        .location_text a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .location_text a:hover {
+            text-decoration: underline;
+        }
+
+        .footer_social_icon ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer_social_icon ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .footer_social_icon a {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .footer_social_icon a:hover {
+            color: #4a90e2;
+        }
+
+        .copyright_section {
+            background-color: #222;
+            color: #ccc;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .copyright_text {
+            margin: 0;
+        }
+
+        .update_mail {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .subscribe_bt a img {
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header_section header_bg">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="about.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="mock.php">Mock Tests</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ats.php">ATS Checker</a></li>
+                        <li class="nav-item"><a class="nav-link" href="company.php">Company Listing</a></li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <div class="login_bt">
+                            <ul style="color:#222">
+                                <li><a href="login.html" style="color:#222"><span class="user_icon"><i class="fa fa-user" aria-hidden="true" style="color:#222"></i></span>Login</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <header>
+                <h1>Prepare for Your Group Discussions Here</h1>
+            </header>
+
+            <section class="links-section">
+                <!-- Link 1 -->
+                <div class="news-item">
+                    <h2>01. Stay Updated</h2>
+                    <div class="scrollable-links">
+                        <p><a href="https://www.bbc.com/news" target="_blank">Global News - BBC</a></p>
+                        <p><a href="https://timesofindia.indiatimes.com/" target="_blank">India News - Times of India</a></p>
+                    </div>
+                </div>
+        
+                <!-- Link 2 -->
+                <div class="news-item">
+                    <h2>02. Daily Highlights</h2>
+                    <div class="scrollable-links">
+                        <p><a href="https://www.nytimes.com/" target="_blank">Global Highlights - NY Times</a></p>
+                        <p><a href="https://www.thehindu.com/" target="_blank">India Highlights - The Hindu</a></p>
+                    </div>
+                </div>
+        
+                <!-- Link 3 -->
+                <div class="news-item">
+                    <h2>03. Global News</h2>
+                    <div class="scrollable-links">
+                        <p><a href="https://www.theguardian.com/international" target="_blank">Global News - The Guardian</a></p>
+                        <p><a href="https://www.ndtv.com/" target="_blank">India News - NDTV</a></p>
+                    </div>
+                </div>
+        
+                <!-- Link 4 -->
+                <div class="news-item">
+                    <h2>04. Breaking Stories</h2>
+                    <div class="scrollable-links">
+                        <p><a href="https://www.bloomberg.com/asia" target="_blank">Breaking Stories - Bloomberg</a></p>
+                        <p><a href="https://www.moneycontrol.com/" target="_blank">Breaking Stories - Moneycontrol</a></p>
+                    </div>
+                </div>
+        
+                <!-- Link 5 -->
+                <div class="news-item">
+                    <h2>05. Economy Updates</h2>
+                    <div class="scrollable-links">
+                        <p><a href="https://www.ft.com/" target="_blank">Economy Updates - Financial Times</a></p>
+                        <p><a href="https://www.economictimes.indiatimes.com/" target="_blank">Economy Updates - Economic Times</a></p>
+                    </div>
+                </div>
+        
+                <!-- Link 6 -->
+                <div class="news-item">
+                    <h2>06. Technology Insights</h2>
+                    <div class="scrollable-links">
+                        <p><a href="https://techcrunch.com/" target="_blank">Tech News - TechCrunch</a></p>
+                        <p><a href="https://www.livemint.com/technology" target="_blank">Tech News - Mint</a></p>
+                    </div>
+                </div>
+        
+                <!-- Link 7 -->
+                <div class="news-item">
+                    <h2>07. News Summaries</h2>
+                    <div class="scrollable-links">
+                        <p><a href="https://timesofindia.indiatimes.com/home/headlines" target="_blank">India News Summaries - Times of India</a></p>
+                        <p><a href="https://www.aljazeera.com/news/" target="_blank">World News Summaries - Al Jazeera</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cat" id="cat"></div>
+            <div class="ball" id="ball"></div>
+        </div>
+    </main>
+
+
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="address_text">Address</div>
+                    <div class="location_text">
+                        <ul>
+                            <li>M.O.P Vaishnav College for Women</li>
+                            <li>Nungambakkam, Chennai-600034</li>
+                            <li>Phone: 981095817  |  9382633966</></li>
+                            <li><a href="#">Email: 2313711058046@mopvaishnav.ac.in  |  2313711058004@mopvaishnav.ac.in</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer_text">
+                        <p>&copy; 2024 JobReadyX. All Rights Reserved.</p>
+                        <div class="footer_social_icon">
+                            <ul>
+                                <li><a href="https://www.facebook.com/MOPVaishnavCollegeforWomen/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://in.linkedin.com/school/m-o-p-vaishnav-college-for-women/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com/mopvcfw/?igshid=r8dcc24adg9u"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright_section">
+        <p class="copyright_text">&copy; 2024 JobReadyX.All Rights Reserved.</p>
+    </div>
+
+</html>
